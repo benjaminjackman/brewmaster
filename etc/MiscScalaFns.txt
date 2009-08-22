@@ -1,0 +1,17 @@
+  //Gets the combination[2] of a list
+  //that is for the list [1,2,3] -> [(1,2),(1,3),(2,3)]
+  //Not at all efficient!
+  final def comb2[A](xs : List[A]) : List[(A,A)] = {
+    xs match {
+      case Nil => Nil
+      case x::Nil => Nil
+      case x::xs => xs.map(y=>(x,y)):::comb2(xs)
+    }
+  }
+  
+  //Permutation 2 of a list
+  //for example list [1,2,3] -> [(1,2),(1,3),(2,3),(2,1),(3,1),(3,2)]
+  final def perm2[A](xs : List[A]) : List[(A,A)] = {
+    val comb = comb2(xs)
+    comb:::comb.map{case (x,y) => (y,x)}
+  }

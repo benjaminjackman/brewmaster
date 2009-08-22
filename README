@@ -1,0 +1,20 @@
+ ____                                        _            
+|  _ \                                      | |           
+| |_) |_ __ _____      ___ __ ___   __ _ ___| |_ ___ _ __ 
+|  _ <| '__/ _ \ \ /\ / / '_ ` _ \ / _` / __| __/ _ \ '__|
+| |_) | | |  __/\ V  V /| | | | | | (_| \__ \ ||  __/ |   
+|____/|_|  \___| \_/\_/ |_| |_| |_|\__,_|___/\__\___|_|   
+Copyright Ben Jackman 2009
+
+Brewmaster, A groovy script based configuration framework for scala (and maybe java too)
+
+Depends on:
+Groovy
+Google Guice
+
+Motivation:
+Programs are often structured as trees of components. Brewmaster makes configuring programs fashioned in this was a snap.
+Brewmaster also allows for programs to be refreshed while running by changing the groovy script that started them, 
+all changes will then be automatically propagated throughout the program.
+
+For examples of uses explore the classes under the test folder.
