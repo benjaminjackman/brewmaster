@@ -8,12 +8,9 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <groupId>biz.jackman.brewmaster</groupId>
   <artifactId>brewmaster-core</artifactId>
   <packaging>jar</packaging>
-  <version>0.1.0-SNAPSHOT</version>
   <name>brewmaster-core</name>
-  <url>http://maven.apache.org</url>
 
   <dependencies>
     <dependency>

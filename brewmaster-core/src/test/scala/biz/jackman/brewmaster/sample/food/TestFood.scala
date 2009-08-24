@@ -1,5 +1,6 @@
 package biz.jackman.brewmaster.sample.food
 
+import brewutils.MavenSuite
 import org.scalatest.FunSuite
 
 import groovy.lang.GroovyShell
@@ -9,7 +10,7 @@ import biz.jackman.brewmaster.classtree.ClassTreeGenerator
 import biz.jackman.brewmaster.inject.{GuiceBrewjector, StandardBrewverter}
 import biz.jackman.brewmaster.phases.Brewsetter
 
-class TestFood extends FunSuite {
+class TestFood extends FunSuite with MavenSuite {
   val script1 = 
     """def builder = new NodeBuilder()
   	  |root = builder.Employees {

@@ -17,11 +17,11 @@
 
 
   <!--<repositories>-->
-    <!--<repository>-->
-      <!--<id>guice-repo</id>-->
-      <!--<name>Guice 2.0 Maven Repository</name>-->
-      <!--<url>http://guice-maven.googlecode.com/svn/trunk/</url>-->
-    <!--</repository>-->
+  <!--<repository>-->
+  <!--<id>guice-repo</id>-->
+  <!--<name>Guice 2.0 Maven Repository</name>-->
+  <!--<url>http://guice-maven.googlecode.com/svn/trunk/</url>-->
+  <!--</repository>-->
   <!--</repositories>-->
 
 
@@ -40,29 +40,33 @@
         <artifactId>maven-scala-plugin</artifactId>
         <executions>
           <execution>
-            <id>compile</id>
-            <goals>
-              <goal>compile</goal>
-            </goals>
-            <phase>compile</phase>
-          </execution>
-          <execution>
-            <id>test-compile</id>
-            <goals>
-              <goal>testCompile</goal>
-            </goals>
-            <phase>test-compile</phase>
-          </execution>
-          <execution>
+            <id>scala-compile-first</id>
             <phase>process-resources</phase>
             <goals>
+              <goal>add-source</goal>
               <goal>compile</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>scala-test-compile</id>
+            <phase>process-test-resources</phase>
+            <goals>
+              <goal>testCompile</goal>
             </goals>
           </execution>
         </executions>
       </plugin>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>compile</phase>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+        </executions>
         <configuration>
           <source>${java-source-version}</source>
           <target>${java-source-version}</target>
@@ -70,6 +74,40 @@
       </plugin>
     </plugins>
   </build>
+  <!--<build>-->
+  <!--<plugins>-->
+  <!--<plugin>-->
+  <!--<groupId>org.scala-tools</groupId>-->
+  <!--<artifactId>maven-scala-plugin</artifactId>-->
+  <!--<executions>-->
+  <!--<execution>-->
+  <!--<goals>-->
+  <!--<goal>compile</goal>-->
+  <!--<goal>testCompile</goal>-->
+  <!--</goals>-->
+  <!--</execution>-->
+  <!--</executions>-->
+  <!--<configuration>-->
+  <!--<jvmArgs>-->
+  <!--<jvmArg>-Xmx1024m</jvmArg>-->
+  <!--</jvmArgs>-->
+  <!--<args>-->
+  <!-- arg>-unchecked</arg -->
+  <!--<arg>-deprecation</arg>-->
+  <!--<arg>-Xno-varargs-conversion</arg>-->
+  <!--</args>-->
+  <!--<scalaVersion>${scala.version}</scalaVersion>-->
+  <!--</configuration>-->
+  <!--</plugin>-->
+  <!--<plugin>-->
+  <!--<artifactId>maven-compiler-plugin</artifactId>-->
+  <!--<configuration>-->
+  <!--<source>${java-source-version}</source>-->
+  <!--<target>${java-source-version}</target>-->
+  <!--</configuration>-->
+  <!--</plugin>-->
+  <!--</plugins>-->
+  <!--</build>-->
 
   <dependencies>
     <dependency>

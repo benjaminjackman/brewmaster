@@ -1,5 +1,6 @@
 package biz.jackman.brewmaster.sample.food
 
+import brewutils.MavenSuite
 import org.scalatest.FunSuite
 import com.google.inject.{TypeLiteral, Key, AbstractModule, Provider, Module, Binder, MembersInjector, Injector, Guice, Inject}
 import com.google.inject.matcher.Matchers
@@ -7,7 +8,7 @@ import com.google.inject.spi.{TypeListener, TypeEncounter}
 import java.lang.reflect.{ParameterizedType, Field}
 import biz.jackman.brewmaster.annotations.Attribute
 
-object TestMisc extends FunSuite {
+class TestMisc extends FunSuite with MavenSuite {
   case class AttributeInjector[T](field : Field) extends MembersInjector[T] {
   	field setAccessible true
     override def injectMembers(t : T) {
