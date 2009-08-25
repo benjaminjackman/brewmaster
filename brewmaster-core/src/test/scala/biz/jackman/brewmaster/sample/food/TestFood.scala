@@ -1,7 +1,6 @@
 package biz.jackman.brewmaster.sample.food
 
-import brewutils.MavenSuite
-import org.scalatest.FunSuite
+
 
 import groovy.lang.GroovyShell
 import com.google.inject.Guice
@@ -9,8 +8,9 @@ import biz.jackman.brewmaster._
 import biz.jackman.brewmaster.classtree.ClassTreeGenerator
 import biz.jackman.brewmaster.inject.{GuiceBrewjector, StandardBrewverter}
 import biz.jackman.brewmaster.phases.Brewsetter
+import org.scalatest.Suite
 
-class TestFood extends FunSuite with MavenSuite {
+class TestFood extends Suite {
   val script1 = 
     """def builder = new NodeBuilder()
   	  |root = builder.Employees {
@@ -31,7 +31,7 @@ class TestFood extends FunSuite with MavenSuite {
   	  |root
       |""".stripMargin
   
-  test("Employees should initialize without error") {
+  def testEmployeesInitOk {
     //Shows how to make a shell with a method defined
 	  implicit val shell = {
 	    val shell = new GroovyShell()
