@@ -10,7 +10,7 @@
 
 
   <properties>
-    <scala-version>2.7.5</scala-version>
+    <scala-version>2.13.1</scala-version>
     <groovy-version>1.6.4</groovy-version>
     <java-source-version>1.6</java-source-version>
   </properties>
